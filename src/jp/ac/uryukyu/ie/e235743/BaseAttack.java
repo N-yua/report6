@@ -1,7 +1,11 @@
 package jp.ac.uryukyu.ie.e235743;
 
-public class BaseAttack {
-    int number;
+public interface BaseAttack {
+    
+    String name();
+    void execute(Monster executer, Monster target);
+
+    /*int number;
     int attack;
 
     //コンストラクタ
@@ -27,5 +31,6 @@ public class BaseAttack {
     public void setattack(int attack){
         this.attack = attack;
     }
+    */
 
 }
