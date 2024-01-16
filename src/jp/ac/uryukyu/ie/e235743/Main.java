@@ -1,6 +1,4 @@
 package jp.ac.uryukyu.ie.e235743;
-import java.util.Map;
-import java.util.TreeMap;
 
 
 public class Main {
