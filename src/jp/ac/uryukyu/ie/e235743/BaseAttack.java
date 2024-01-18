@@ -1,7 +1,7 @@
 package jp.ac.uryukyu.ie.e235743;
 
 public interface BaseAttack {
-    
+
     String name();
     void execute(Monster executer, Monster target);
 

@@ -2,16 +2,18 @@ package jp.ac.uryukyu.ie.e235743;
 
 
 public class Monster {
-    private int number;
     private String name;
     private int hp;
     private int attack;
+    private int level;
+    private int number;
 
     //コンストラクタ
     public Monster(int number,String name,int hp,int attack){
         this.number = number;
         this.name = name;
         this.hp = hp;
+        this.level = level;
         this.attack = attack;
     }
 
@@ -22,11 +24,14 @@ public class Monster {
     public int getHp(){
         return hp;
     }
+    public int getLvel(){
+        return level;
+    }
     public int getAttack(){
         return attack;
     }
     public String getMonstername(){
-        return name;  
+        return name; 
     }
 
 
@@ -41,11 +46,12 @@ public class Monster {
     public void setHp(int hp){
         this.hp = hp;
     }
-    public void setattack(int attack){
+    public void setAttack(int attack){
         this.attack = attack;
     }
 
-    //共通した戦いコマンド
+
+    //共通
     public void sleep(int sleep){
         this.hp += sleep;
         System.out.print(this.name + "は眠りについた！" + sleep + "hp回復した！");
@@ -63,6 +69,7 @@ public class Monster {
     }
 
     public void stetas(){
-        
+        System.err.println(this.name + "HP:" + this.hp +"\n" + "レベル:" + this.level);
     }
+
 }
