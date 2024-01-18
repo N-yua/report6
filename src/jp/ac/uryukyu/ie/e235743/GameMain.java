@@ -50,7 +50,6 @@ public class GameMain {
 
 //バトルスタート
         attack.execute(water, enemy);
-        water.sleep(m);
 //戦闘終了
     
 
