@@ -9,7 +9,7 @@ public class Monster {
     private int number;
 
     //コンストラクタ
-    public Monster(int number,String name,int hp,int attack){
+    public Monster(int level,String name,int hp,int attack){
         this.number = number;
         this.name = name;
         this.hp = hp;
@@ -69,7 +69,7 @@ public class Monster {
     }
 
     public void stetas(){
-        System.err.println(this.name + "HP:" + this.hp +"\n" + "レベル:" + this.level);
+        System.err.println(this.name + "\n" + "HP:" + this.hp + "\n" + "レベル:" + this.level);
     }
 
 }

@@ -2,13 +2,6 @@ package jp.ac.uryukyu.ie.e235743;
 
 public class Attack implements BaseAttack{
 
-    int attackname;
-
-    @Override
-    public String name() {
-        return "ほのおのキバ";
-    }
-
     @Override
     public void execute(Monster executer, Monster target) {
         if(executer.getHp() > 0){
