@@ -1,14 +1,28 @@
 package jp.ac.uryukyu.ie.e235743;
+/**
+ * Monster_baseメソッド<br>
+ * 全モンスターの共通の情報を持つ親クラス
+ */
 
 
 public class Monster_base {
+/**モンスターの名前 */
     private String name;
+/**モンスターのHP */
     private int hp;
+/**モンスターの攻撃力 */
     private int attack;
+/**モンスターのレベル */
     private int level;
-    private int number;
 
-    //コンストラクタ
+
+/**
+ * コンストラクタ
+ * @param level　モンスターレベル
+ * @param name　モンスターの名前
+ * @param hp　モンスターのHP
+ * @param attack　モンスターの攻撃力
+ */
     public Monster_base(int level,String name,int hp,int attack){
         this.name = name;
         this.hp = hp;
@@ -17,9 +31,7 @@ public class Monster_base {
     }
 
     //getterメソッド
-    public int getNumber(){
-        return number;
-    }
+
     public int getHp(){
         return hp;
     }
@@ -33,12 +45,8 @@ public class Monster_base {
         return name; 
     }
 
-
-
     //setterメソッド
-    public void setNumber(int number){
-        this.number = number;
-    }
+ 
     public void setName(String name){
         this.name = name;
     }
@@ -49,23 +57,28 @@ public class Monster_base {
         this.attack = attack;
     }
 
-
     //共通
-    
+/**
+ * 攻撃を受けた時の残りHP
+ * @param damage　攻撃を受けた時の残りHP
+ */
     public void damage(int damage){
         hp -= damage;
     }
 
-    public void wounded(int damage){
-        hp -= damage;
-        if(hp < 0){            
-        System.out.printf(this.name+"は倒れた。\n");
-        System.out.printf("目の前が真っ暗になった！\n");
-        }
-    }
-
+/**
+ * モンスターの名前、HP、レベルを表示するメソッド
+ */
     public void stetas(){
         System.err.println(this.name + "\n" + "HP:" + this.hp + "\n" + "レベル:" + this.level);
+    }
+
+/**
+ * バトルを始める時の表示するメッセージ
+ */
+    public void massage(){
+        System.out.println("『ゆけっ" + getMonstername() + "！』");
+        System.out.println(this.name + "を繰り出した");
     }
 
 }
