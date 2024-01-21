@@ -1,12 +1,13 @@
 package jp.ac.uryukyu.ie.e235743;
 
-public class Fire_wazalist implements BaseAttack{
+public class Grass_wazalist implements BaseAttack{
 
+@Override
     public void execute(Monster_base executer, Monster_base target) {
-    Attack attack = new Attack();
-    Monster fire = new Monster(1, "ほのお", 50, 10);
-    final String[] TYPES={"1 ほのおのキバ","2 ニトロチャージ","3 かえんボール"};
 
+        final String[] TYPES={"1 リーフカッター","2 くさむすび","3 ギガドレイン"};
+        Attack attack = new Attack();
+        Monster grass = new Monster(1, "くさ", 50, 10);
 
         for(int i = 0; i < 3; i ++){
             System.out.println(TYPES[i]);
@@ -19,16 +20,16 @@ public class Fire_wazalist implements BaseAttack{
         switch (m) {
             case 1:
             System.out.println(TYPES[0]+ "を繰り出した！");
-            attack.attack(fire, target);
+            attack.attack(grass, target);
                 break;
             case 2:
             System.out.println(TYPES[1] + "を繰り出した！");
-            attack.attack(fire, target);
+            attack.attack(grass, target);
                 break;
             case 3:
             System.out.println(TYPES[2] + "を繰り出した！");  
-            attack.attack(fire, target);
+            attack.attack(grass, target);
         }
+
     }
-    
 }

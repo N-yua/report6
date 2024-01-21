@@ -10,7 +10,6 @@ public class Monster_base {
 
     //コンストラクタ
     public Monster_base(int level,String name,int hp,int attack){
-        this.number = number;
         this.name = name;
         this.hp = hp;
         this.level = level;
@@ -52,10 +51,6 @@ public class Monster_base {
 
 
     //共通
-    public void sleep(int sleep){
-        this.hp += sleep;
-        System.out.print(this.name + "は眠りについた！" + sleep + "hp回復した！");
-    }
     
     public void damage(int damage){
         hp -= damage;
@@ -65,6 +60,7 @@ public class Monster_base {
         hp -= damage;
         if(hp < 0){            
         System.out.printf(this.name+"は倒れた。\n");
+        System.out.printf("目の前が真っ暗になった！\n");
         }
     }
 
