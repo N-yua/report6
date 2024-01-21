@@ -6,24 +6,26 @@ import java.util.List;
 public class GameMain {
     public static void main(String[] args){
 
-//モンスターと攻撃メソッド
+//インスタンス
 
-    Firetype fire = new Firetype(1, "ほのお", 50, 10);
-    Firetype water = new Firetype(1, "みず", 50, 10);
-    Firetype grass= new Firetype(1, "くさ", 50, 10);
-    final Firetype[] monsters = {fire,water,grass};
-
-
+    Monster fire = new Monster(1, "ほのお", 50, 10);
+    Monster water = new Monster(1, "みず", 50, 10);
+    Monster grass= new Monster(1, "くさ", 50, 10);
+    final Monster[] monsters = {fire,water,grass};
 
 
     EnemyMonster enemy = new EnemyMonster(2, "でんき", 50, 10);
     Attack attack = new Attack();
+    Fire_wazalist fire_wazalist = new Fire_wazalist();
     final String[] TYPES={"1 ほのお","2 みず","3 くさ"};
-    ArrayList<Monster> list = new ArrayList<>();
+    ArrayList<Monster_base> list = new ArrayList<>();
 
+
+    
     
 
 //モンスターを選択
+        //モンスター表示
         for(int i = 0; i < 3; i ++){
             System.out.println(TYPES[i]);
             }
@@ -63,8 +65,9 @@ public class GameMain {
             case 1:
             //どちらかのHPが０になるまで戦闘を続ける。
             while(enemy.getHp() > 0 && fire.getHp() > 0){
-                attack.execute(fire, enemy); //戦闘中に技を選択できるターンバトルにしたい
-                attack.execute(enemy, fire);
+
+                fire_wazalist.execute(fire, enemy);//戦闘中に技を選択できるターンバトルにしたい
+                
             }
             System.out.println("戦闘終了"); //勝敗を表示したい
                 break;
@@ -72,16 +75,14 @@ public class GameMain {
             case 2:
             //どちらかのHPが０になるまで戦闘を続ける。
             while(enemy.getHp() > 0 && fire.getHp() > 0){
-                attack.execute(water, enemy);
-                attack.execute(enemy, water);
+                
             }
             System.out.println("戦闘終了");
                 break;
             //くさの場合
             case 3:
             while(enemy.getHp() > 0 && fire.getHp() > 0){
-                attack.execute(grass, enemy);
-                attack.execute(enemy, grass);
+               
             }
             System.out.println("戦闘終了");
                 break;
